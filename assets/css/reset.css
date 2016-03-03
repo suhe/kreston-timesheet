@@ -1,0 +1,91 @@
+/**********************************
+
+Use: Reset Styles for all browsers
+
+***********************************/
+	
+
+
+a img, iframe { border: none; }
+	
+/* Headers
+------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+	
+/* Lists
+------------------------------*/
+	
+ul, ol, dl, li, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+	
+/* Links
+------------------------------*/
+
+a, a:link {}
+a:visited {}
+a:hover {}
+a:active {}
+
+/* Forms
+------------------------------*/
+
+
+form, fieldset {
+	margin: 4px 0px 0px 3px;
+	padding: 5;
+}
+	
+fieldset { border: 1px solid #000;
+-moz-border-radius-bottomleft:20px;
+-moz-border-radius-bottomright:20px;
+-moz-border-radius-topleft:20px;
+-moz-border-radius-topright:20px; 
+ }
+
+legend {
+	padding: 0;
+	color: #000;
+}
+
+input, textarea {
+	margin: 0;
+	padding: 5px;
+	font-size: 100%;
+	font-family: inherit;
+    width:47% ;
+}
+
+select {
+    color:#000;
+}
+
+.number{width:10% ;}
+	
+select { padding: 0; }
+div.demo {
+	padding:12px;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
+}
+
+.mainpage select{
+    padding:4px;
+    border:1px solid #222 ;
+}
+
+.mainpage .date{float:left;margin:1%;}
+.mainpage .type{float:left;margin:1%;}
+.mainpage .code{float:left;width:405px;margin:1%;}
+.mainpage .description{float:left;width:200px;margin:1%;}
+.mainpage .time{float:left;width:20px;margin:1%;}
+.mainpage .wd{float:left;width:100px;margin:1%;}
+.red{color:red ;}
+.green{color:green;}
+.tit{font-size:14px;font-weight: bold;font-style: italic;}
+.len{ width:350px;}

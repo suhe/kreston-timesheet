@@ -1,0 +1,27 @@
+html, body {height:100%;}
+div#distance {float:left;height:50%;margin-bottom:-10em;width:1px;}
+div#container {clear:left;height:150px;margin:0 auto;padding-top:75px;position:relative;text-align:left;width:800px;}
+body {background:transparent url(../images/bg-login.jpg) repeat-x scroll center center;font-family:Helvetica,Arial,Tahoma;
+font-size:9pt;margin:0;padding:0;}
+h1 {font-size:250%;font-weight:bold;letter-spacing:-1px;margin:0 0 35px;padding:0;text-transform:uppercase;width:800px;}
+h1 a {color:#FFFFFF;text-decoration:none;}
+h1 a:hover {color:#CCCCCC;}
+fieldset, form {border:0 none;margin:0;outline-style:none;outline-width:0;padding:0;}
+fieldset legend {display:none;}
+ol {list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:0;}
+ol li {float:left;margin-right:15px;}label {color:#FFFFFF;display:block;float:left;font-weight:bold;padding-top:3px;width:90px; }span {float:left;margin-right:10px;width:186px;}
+span input {
+-moz-border-radius-bottomleft:8px;-moz-border-radius-bottomright:8px;-moz-border-radius-topleft:8px;-moz-border-radiu-topright:8px;border:medium none;margin-top:-3px;outline-color:-moz-use-text-color;outline-style:none;outline-width:medium;
+padding:4px;}
+select {
+-moz-border-radius-bottomleft:8px;-moz-border-radius-bottomright:8px;-moz-border-radius-topleft:8px;-moz-border-radiu-topright:8px;border:medium none;margin-top:-3px;outline-color:-moz-use-text-color;outline-style:none;outline-width:medium;
+padding:4px;}
+label.remember {color:#CCCCCC;float:left;margin-left:75px;margin-right:180px;margin-top:20px;width:200px;}
+div.float-right {float:right;margin-top:20px;width:120px;}
+div.float-left {float:left;margin-top:20px;width:180px;}
+.clear{clear: both;}
+.message { color:#3D3333;font-size:1.2em;margin:0 2em 1em;padding:10px 10px 10px 50px;position:relative;margin-top:20px ;}
+.errormessage{ background:#FFE5E5 url(../images/error.png) no-repeat scroll left center;border:1px solid #D99D9D;}
+.success{background:#E9FFE5 url(../images/success.png) no-repeat scroll left center;border:1px solid #9BDEA8;}
+
+.clear{clear: both;}

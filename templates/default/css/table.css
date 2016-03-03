@@ -1,0 +1,57 @@
+pre { font-family: monospace;}
+#pagewrap { margin: 0 auto;width: 700px;}
+#search {-webkit-border-radius: 10px;padding: 10px;margin:10px}
+table {background-color: white;width:95%;margin:auto;padding:10px 0px 40px 0px;color:#FFFFFF;
+overflow:auto;
+font-size:8pt;
+}
+th.sortable {color: #FFF;cursor: pointer;text-decoration: none;background:url(../images/th.jpg);padding:5px;}
+th.sortable:hover { color: #FFF; }
+th.sorted-asc, th.sorted-desc  { color: #FFF; }
+td {background-color: #05396B;padding:3px;}
+td.odd { background-color: #FFFFFF;color: #222;padding:3px}
+td.hovered {background-color: lightblue;color: #666;}
+.time{width:30px}
+.accordionButton {
+	margin:auto; 
+	width: 95%;
+	overflow:auto;
+	border-bottom: 1px solid #222;
+	cursor: pointer;
+	padding:5px;
+	}
+	
+.accordionContent {
+    margin:auto;		
+	width: 95%;
+	background: #FFF;
+	padding:2px;
+	}
+	
+/***********************************************************************************************************************
+ EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
+************************************************************************************************************************/
+
+.title2{margin:auto;}
+.title2 h1{font-size:15px;margin-left:2%}
+
+.on {
+	background: #990000;
+	}
+	
+.over {
+	background: #CCCCCC;
+}
+	
+
+.head{width:95%;margin:auto;height:30px;background:url(../images/th.jpg);color:#FFF}
+.col1{width:20%;float:left;padding:2px;margin:3px}
+.col2{width:40%;float:left;padding:2px;margin:3px}
+.col3{width:36%;float:left;padding:2px;margin:3px}
+.con{height:100px;float:left;padding:2px;margin:3px}
+.transport{width:50px;}
+.pis1,.pis2{width:5%;padding:2px;margin:3px}
+.go{padding:2px;width:20px;height:30px;}
+.left{float: left;}
+.right{float: right;cursor: pointer;font-size:12px;}
+.hidden{display: none;}

@@ -1,0 +1,32 @@
+body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
+body { margin: 0; padding: 0; font-size: small; color: #333 }
+h1, h2 { font-family: 'trebuchet ms', verdana, arial; padding: 10px; margin: 0 }
+h1 { font-size: large }
+#main { padding: 1em; }
+#banner { padding: 15px; background-color: #06b; color: white; font-size: large; border-bottom: 1px solid #ccc;
+    background: url(../images/bg.gif) repeat-x; text-align: center }
+#banner a { color: white; }
+	
+p { margin: 10px 0; }
+
+li { margin-left: 10px; }
+
+h3 { margin: 1em 0 0; }
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+.h{margin-left:25px ;}
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+.message { color:#3D3333;font-size:1.2em;margin:0 2em 1em;padding:10px 10px 10px 50px;position:relative;margin-top:20px ;}
+
+.errormessage{ background:#FFE5E5 url(../images/error.png) no-repeat scroll left center;border:1px solid #D99D9D;}
+.success{background:#E9FFE5 url(../images/success.png) no-repeat scroll left center;border:1px solid #9BDEA8;}
+
+.clear{clear: both;}
+.double{width:100px;text-align: right;}
+
+/** Bootstrap Custom CSS **/
+.table-outter {overflow-x:scroll;}
+.table{table-layout: fixed; margin:40px auto 40px auto;   }

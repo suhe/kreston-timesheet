@@ -1,0 +1,80 @@
+<?php
+
+class Josh_staff extends Model
+{
+	function Josh_staff()
+	{
+		parent::Model();
+	}
+    
+	//Menampilkan data per Record
+	function selectRecords()
+	{
+		$data=array();
+        $this->db->select('*');
+        $this->db->orderby('no','ASC');
+		$Q=$this->db->get('josh_staff');
+        if($Q->num_rows()> 0 )
+		   {
+			   foreach ($Q->result_array() as $row)
+               {
+                  $data[]=$row;
+               }
+		   }
+		$Q->free_result();
+		return $data;
+	}
+    
+    function saveRecord()
+    {
+		$data=array(
+            'no'=>$this->input->xss_clean('no'),
+            'name'=>$this->input->xss_clean('name')
+		); 
+        
+        
+        //save images to assets/photo/staff
+       	if ($_FILES)
+           {
+		      $config['upload_path'] = './assets/photo/';
+              $config['allowed_types'] = 'gif|jpg|png';
+		      $config['max_size'] = '200000';
+		      $config['remove_spaces'] = true;
+		      $config['overwrite'] = false;
+		      //$config['max_width']  = '0';
+		      //$config['max_height']  = '0';
+		      $this->load->library('upload',$config);	
+	
+		      if (strlen($_FILES['image']['name']))
+                {
+			       if(!$this->upload->do_upload('image'))
+                    {
+				      $this->upload->display_errors();
+				      exit();
+			        }
+		            $image =$this->upload->data();
+		
+			        if ($image['file_name'])
+                    {
+				     //$data['photo'] = "assets/photo/staff".$image['file_name'];
+                        $config['image_library'] = 'gd2';
+                        $config['source_image'] = './assets/photo/staff'.$image['file_name'];
+                        $config['new_image'] = './assets/photo/staff_'.$image['file_name'];
+                        $config['quality'] ='100%';
+                        $config['maintain_ratio'] = TRUE;
+                        $config['width'] = 130;
+                        $config['height'] = 90;
+                        $this->load->library('image_lib',$config);
+                        $this->image_lib->resize();
+                        $data['photo'] = $config['new_image'];   
+			        }
+		       }
+		
+		      
+	      }
+        
+		$this->db->insert('staff',$data);
+	}
+    
+}
+    

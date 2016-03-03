@@ -1,0 +1,46 @@
+.mainpage2{margin:10px 5px 20px 5px;}
+.menu{background:gray;font-size:8pt;color:#FFF ;font-weight: bold;height:35px;}
+.namePro{width:250px;float:left;padding:5px 5px 12px 5px;}
+.codePro{width:120px;float:left;padding:5px 5px 12px 5px;}
+.timePro{width:300px;float:left;padding:5px 5px 3px 5px;}
+.timePro1{text-align: center;font-size:6pt;border-bottom:1px solid #FFF;}
+.total{width:30px;float:left;padding:7px 5px 12px 5px;}
+.work{width:140px;float:left;padding:5px 5px 12px 5px;}
+.transp{width:80px;float:left;padding:5px 5px 12px 5px;}
+.charge{width:170px;float:right;padding:5px 0 6px;}
+
+.left{float:left;}
+.right{float:left;height:20px;padding:1px;cursor:pointer;width:25px;margin-left:5px ;}
+
+.time{position: relative;}
+.cola1,.cola2,.cola3,.cola4,.cola5,.cola6,.cola7,.cola8,.cola9,.cola10,.cola11,.cola12,.cola13,.cola14,.cola15
+{width:20px;position:absolute;top:3px;}
+.cola1{left:0px;}
+.cola2{left:20px;}
+.cola3{left:40px;}
+.cola4{left:60px;}
+.cola5{left:80px;}
+.cola6{left:100px;}
+.cola7{left:120px;}
+.cola8{left:140px;}
+.cola9{left:160px;}
+.cola10{left:180px;}
+.cola11{left:200px;}
+.cola12{left:220px;}
+.cola13{left:240px;}
+.cola14{left:260px;}
+.cola15{left:280px;}
+
+.type{font-size:14px;font-weight: bold;font-style: italic;padding:5px;}
+.content{font-size:8pt;background:#CCC;border-bottom:1px solid #000 ;}
+.contol{background:#FFF;}
+.hour{border-top:1px solid #000 ;}
+.red{color:red;font-weight: bold;}
+#keterangan{font-size:8pt ;}
+.ch1{width:150px;background:#CCC;float: left;margin:5px;padding:5px;}
+.coder{float:left;padding:3px;}
+.namer{float:right;padding:3px;}
+
+.sign{width:40px;height:20px;}
+.name{font-size:8pt;}
+#approval,#approval2{float: left;margin-left:5px;}

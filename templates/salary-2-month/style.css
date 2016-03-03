@@ -1,0 +1,54 @@
+body{ margin:0 ;font-family: Arial;}
+h1,h2{font-weight: bold;font-size:14pt;}
+h1{color: blue;}
+h2{color: orange;letter-spacing:10px ;}
+#container{width:1470px;background: url(images/logo.jpg) no-repeat #FFF;margin: auto;}
+#header{}
+.title{margin:0;}
+.titleLap{margin-right:80px;float: left;}
+.clear{clear: both;}
+.name,.no{float:left;font-size:8pt;padding:5px;font-weight: bold;}
+.no{width:130px;}
+.name{width:250px;}
+.periode{float:right;width:200px;font-size:8pt;padding:5px;font-weight: bold;}
+.menu{background:gray;font-size:8pt;color:#FFF ;font-weight: bold;}
+
+.bold{font-weight: bold;}
+
+.codePro{width:45px;float:left;padding:5px;}
+.namePro{width:120px;float:left;padding:5px;}
+.pos{width:60px;float:left;padding:5px;}
+.salmon{width:64px;float:left;padding:5px;}
+.salmon2{width:58px;float:left;padding:5px;}
+.ot{width:28px;float:left;padding:5px;}
+.total{width:65px;float:left;padding:5px;}
+
+.timePro{width:300px;float:left;padding:5px 5px 3px 5px;}
+
+.timePro1{text-align: center;font-size:6pt;border-bottom:1px solid #FFF;}
+
+.work{width:140px;float:left;padding:5px;}
+.transp{width:0px;float:left;padding:5px 50px;}
+.salary{width:65px;float:left;padding:5px 50px;}
+.charge{width:10px;float:left;padding:5px 22px; }
+.charge .name{font-size:8px;}
+.time{position: relative;}
+
+.type{font-size:14px;font-weight: bold;font-style: italic;padding:5px;}
+.content{font-size:8pt;background:#CCC;border-bottom:1px solid #000 ;}
+.contol{background:#FFF;}
+.hour{border-top:1px solid #000 ;}
+.red{color:red;font-weight: bold;font-style: italic;}
+.blue{color:blue;font-weight: bold;font-style: italic;}
+#keterangan{font-size:8pt ;}
+.ch1{float: left;margin:5px;padding:5px;}
+.coder{float:left;padding:3px;}
+.namer{float:right;padding:3px;}
+.sign{width:50px;height:20px ;}
+
+.names{font-size:6pt;font-weight:bold;text-align: center;}
+.sign2{width:60px;height:30px ;}
+p{margin: 0;}
+b{font-style: italic;font-weight: bold;}
+.b{font-weight: bold;}
+.total2{background: gray;}
