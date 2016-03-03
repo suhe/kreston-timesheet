@@ -34,6 +34,12 @@
                <td>Time Charge Summary Report</td>
                <td><center><a href="<?=base_url()?>report/user/timecharge_summary">Access</a></center</td>
 			</tr>
+			<?php if($_SESSION['level']=='HRD'){ ?>
+			   <tr>
+               <td>Overtime Report By Client</td>
+               <td><center><a href="<?=base_url()?>overtime/accounting/client">Access</a></center</td>
+			</tr>
+			<?php } ?>
             <tr>
                <td>Time Charge Details Report</td>
                <td><center><a href="<?=base_url()?>report/user/timecharge_details">Access</a></center</td>

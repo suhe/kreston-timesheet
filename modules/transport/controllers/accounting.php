@@ -235,36 +235,7 @@ class Accounting extends Controller
 		redirect($file,301);
 	}
 	
-	public function export_excel_old() {
-		$date  = $this->session->userdata('sdate1');
-		$date2 = $this->session->userdata('sdate2');
-		$this->load->helper('export');
-		$sql = " SELECT js.no,js.name,
-				 MAX(transport_chf) as maxtransport,
-				 MIN(transport_chf) as mintransport,
-				 SUM(transport_chf) as sumtransport,
-				 COUNT(DISTINCT(code)) as client
-				 FROM josh_details_day_tr jddt
-				 INNER JOIN josh_staff js ON js.no = SUBSTR(jddt.tr_code,4,5)
-				 WHERE date>=$date AND date<=$date2
-				 AND code NOT LIKE '%NC1001%'
-				 AND code NOT LIKE '%NC1002%'
-				 AND code NOT LIKE '%NC1003%'
-				 AND code NOT LIKE '%NC1004%'
-				 AND code NOT LIKE '%NC1005%'
-				 AND code NOT LIKE '%NC1006%'
-				 AND code NOT LIKE '%NC1007%'
-				 AND code NOT LIKE '%NC1008%'
-				 AND code NOT LIKE '%NC1009%'
-				 AND code NOT LIKE '%NC1010%'
-				 GROUP BY js.no
-				 ORDER BY js.no;
-				 ;
-				 ;
-		"; 
-		$query=$this->db->query($sql);
-        to_excel($query,'TRANSPORT-'); 
-	}
+	
     
     function periode($id)
     {

@@ -5,6 +5,48 @@ class Josh_time_report extends Model
 	{
 		parent::Model();
 	}
+	
+	public function getClientByProject($client_name='',$date_from = '',$date_to = '') {
+		$data = array();
+		$sql = "select c.code,c.name,c.city,c.country
+				from josh_details_day_tr jddt
+				inner join josh_company c on c.code = substr(jddt.code,19,6) 
+				where c.name like '%".($client_name ? $client_name : "")."%' and (jddt.date >= '".$date_from."' and jddt.date <= '".$date_to."') 
+				and jddt.app_manager = 'yes' and over_time_app > 0		
+				group by c.code 
+				order by c.code asc		
+				";
+		$Q = $this->db->query($sql);
+		if($Q->num_rows()> 0 ) {
+			foreach ($Q->result_array() as $row) {
+				$data[]=$row;
+			}
+		}
+		$Q->free_result();
+		return $data;
+	}
+	
+	public function getOvertimeHourByEmployee($client_code = '',$date_from,$date_to) {
+		$data = array();
+		$sql = "select date_format(jddt.date,'%d/%m/%Y') as date,dayname(jddt.date) as day_name,jht.staff_no,jht.staff_name,jht.pos_code,
+				jddt.over_time_app as overtime,jddt.x1,jddt.x2,jddt.x3,jddt.x4,(jddt.meal * 10000) as meal,
+				(((sal_bas/173) * (x1 * 1.5)) + ((sal_bas/173) * (x2 * 2)) + ((sal_bas/173) * (x3 * 3)) + ((sal_bas/173) * (x4 * 4)) + (meal * 10000))  as cost
+				from josh_details_day_tr jddt
+				inner join josh_head_tr jht on jht.tr_code = jddt.tr_code
+				inner join josh_staff js on js.no = jht.staff_no
+				where substr(jddt.code,19,6) = '".$client_code."' and  (jddt.date >= '".$date_from."' and jddt.date <= '".$date_to."')
+				and jddt.app_manager = 'yes' and over_time_app > 0
+				order by jddt.date asc
+				";
+		$Q = $this->db->query($sql);
+		if($Q->num_rows()> 0 ) {
+			foreach ($Q->result_array() as $row) {
+				$data[]=$row;
+			}
+		}
+		$Q->free_result();
+		return $data;
+	}
     
 	//Menampilkan data per Record
 	function selectRecords()
