@@ -168,6 +168,7 @@ class Accounting extends Controller
 		
 			/*  */
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+2,$row,$rec['salary']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 2,$row)->getNumberFormat()->setFormatCode('#,##.00');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+2,$row)->applyFromArray($styleArray);
 			
 			/*  */
@@ -176,30 +177,37 @@ class Accounting extends Controller
 			
 			/* d */
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+4,$row,$rec['overtime']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 4,$row)->getNumberFormat()->setFormatCode('#,##');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+4,$row)->applyFromArray($styleArray);
 			
 			/* d */
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+5,$row,$rec['x1']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 5,$row)->getNumberFormat()->setFormatCode('#,##');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+5,$row)->applyFromArray($styleArray);
 			
 			/* d */
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+6,$row,$rec['x2']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 6,$row)->getNumberFormat()->setFormatCode('#,##');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+6,$row)->applyFromArray($styleArray);
 			
 			/* d */
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+7,$row,$rec['x3']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 7,$row)->getNumberFormat()->setFormatCode('#,##');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+7,$row)->applyFromArray($styleArray);
 			
 			/* d */
 			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+8,$row,$rec['x4']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 8,$row)->getNumberFormat()->setFormatCode('#,##');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+8,$row)->applyFromArray($styleArray);
 			
 			/* d */
-			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+9,$row,number_format($rec['meal']));
+			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+9,$row,$rec['meal']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 9,$row)->getNumberFormat()->setFormatCode('#,##.00');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+9,$row)->applyFromArray($styleArray);
 			
 			/* d */
-			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+10,$row,number_format($rec['totalov'],2));
+			$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+10,$row,$rec['totalov']);
+			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 10,$row)->getNumberFormat()->setFormatCode('#,##.00');
 			$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+10,$row)->applyFromArray($styleArray);
 			
 			$ov = $this->Josh_time_report->selectUserOvertimeAcc($date_from,$date_to,$client_name,$rec['no']);
@@ -223,30 +231,37 @@ class Accounting extends Controller
 				
 				/* d */
 				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+4,$row,$v['over_time_app']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 4,$row)->getNumberFormat()->setFormatCode('#,##');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+4,$row)->applyFromArray($styleArray);
 				
 				/* d */
 				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+5,$row,$v['x1']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 5,$row)->getNumberFormat()->setFormatCode('#,##');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+5,$row)->applyFromArray($styleArray);
 				
 				/* d */
 				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+6,$row,$v['x2']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 6,$row)->getNumberFormat()->setFormatCode('#,##');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+6,$row)->applyFromArray($styleArray);
 				
 				/* d */
 				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+7,$row,$v['x3']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 7,$row)->getNumberFormat()->setFormatCode('#,##');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+7,$row)->applyFromArray($styleArray);
 				
 				/* d */
 				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+8,$row,$v['x4']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 8,$row)->getNumberFormat()->setFormatCode('#,##');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+8,$row)->applyFromArray($styleArray);
 				
 				/* d */
-				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+9,$row,number_format($v['meal']));
+				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+9,$row,$v['meal']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 9,$row)->getNumberFormat()->setFormatCode('#,##.00');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+9,$row)->applyFromArray($styleArray);
 				
 				/* d */
-				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+10,$row,number_format($v['totalov'],2));
+				$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col+10,$row,$v['totalov']);
+				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col + 10,$row)->getNumberFormat()->setFormatCode('#,##.00');
 				$objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($col+10,$row)->applyFromArray($styleArray);
 				$row++;
 			}
