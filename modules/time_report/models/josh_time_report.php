@@ -1897,16 +1897,6 @@ class Josh_time_report extends Model{
 		}
         /** End Of Approval Per Job Timereport 
 		
-        /** Approval Head Timereport 
-		
-		$apphead['status_manager']    = 'approval';
-		$apphead['manager_approval']  = 'yes';
-		$this->db->where('tr_code',$trcode);
-		$this->db->update('josh_head_tr',$apphead);
-		
-		 End Approval Head Timereport **/
-        
-        
         /** Approve Time & Overtime **/
         $code = $this->input->post('code');
         $datex = $this->input->post('date');
@@ -2013,17 +2003,6 @@ class Josh_time_report extends Model{
 				$posx = $Q->row_array();
 				$pos  = $posx['pos'];
 				
-				/*switch($pos){
-					case 'SM' :  $job = 'SM_hour';break;
-					case 'M' :   $job = 'M_hour';break;
-					case 'AM' :  $job = 'AM_hour';break;
-					case 'S2' :  $job = 'S2_hour';break;
-					case 'S1' :  $job = 'S1_hour';break;
-					case 'AS' :  $job = 'AS_hour';break;
-					case 'TA' :  $job = 'TA_hour';break;
-				}*/
-                
-				
 				//save hour to job
 				$job_code = substr($this->input->xss_clean($codeid),18,12);
 				$pos = $pos;
@@ -2034,12 +2013,7 @@ class Josh_time_report extends Model{
 					$this->db->where('code',$job_code);
 					$this->db->update('josh_job',$jobVal);
 				}
-				//$this->db->where('code',$job_code);
-				//$this->db->update('josh_job',$jobVal);
-                //$budget_time = $overtime + $time;
 				
-				//$sql = "UPDATE josh_job SET $job=$job+$budget_time WHERE code = '".substr($code[$i],18,12)."';  ";
-				//$this->db->query($sql);
             }
         }
         /** End Approve Time & Overtime **/
@@ -2053,6 +2027,7 @@ class Josh_time_report extends Model{
 			//$app = $this->input->post('app');
 			$array  = explode(";",$code[$i]);
 			$codeid = $array[0];
+			$trcode = $trcode;
 			$date = mysqldate($array[1]);
 			$time = $this->input->post('time'.$codeid.$date);
 			$app_manager = $this->input->post('app_manager'.$codeid.$date);
@@ -2133,14 +2108,18 @@ class Josh_time_report extends Model{
 			$appdata['hrd_approval'] = 'yes';
 			$appdata['hrd_name']     = $this->input->xss_clean($_SESSION['name']);
 			$appdata['hrd_signature']= $this->input->xss_clean($_SESSION['sign']);
-			if(($v['staff_approval2']=='no') || (!$v['staff_approval2'])){
+			
+			
+			$sqlx = "SELECT * from josh_details_tr WHERE day_code = '".$codeid."' LIMIT 1";
+			$vmex  = $this->db->query($sqlx);
+			$v = $vmex->row_array();
+			
+			if(($v['staff_approval2'] == 'no') || (!$v['staff_approval2'])) {
 				$appdata['staff_approval2'] = 'yes';
 				$appdata['staff_name2']     = $this->input->xss_clean($_SESSION['name']);
-				$appdata['staff_name2']     = $this->input->xss_clean($_SESSION['sign']);
+				$this->db->where('day_code',$codeid);
+				$this->db->update('josh_details_tr',$appdata);
 			}
-			
-			$this->db->where('day_code',$codeid);
-			$this->db->update('josh_details_tr',$appdata);
 			
 			$sql  = " SELECT pos_code as pos from josh_head_tr WHERE tr_code='".$trcode."'";
 			$Q    = $this->db->query($sql);

@@ -748,7 +748,7 @@ class Josh_time_report extends Model
 				 SUM(jddt.x3) AS x3,
 				 SUM(jddt.x4) AS x4,
 				 SUM(jddt.meal) * 10000 as meal,
-				(@s*(SUM(x1)*1.5))+(@s*(SUM(x2)*2))+(@s*(SUM(x3)*3))+(@s*(SUM(x4)*4))+(SUM(meal) * 10000) AS totalov,
+				((js.sal_bas/173) *(SUM(x1) * 1.5))+((js.sal_bas/173) *(SUM(x2)*2))+((js.sal_bas/173)*(SUM(x3)*3))+((js.sal_bas/173)*(SUM(x4)*4))+(SUM(meal) * 10000) AS totalov,
 				 SUM(transport_chf) as ope	
 				 FROM josh_details_day_tr jddt
 				 INNER JOIN josh_staff js ON js.no = SUBSTR(jddt.tr_code,4,5)
@@ -757,7 +757,7 @@ class Josh_time_report extends Model
 				 AND CONCAT(jj.code,' ',jj.name) LIKE '%".$client_name."%'
 				 GROUP BY js.no
 				 HAVING  SUM(jddt.over_time_app) > 0
-				 ORDER BY js.no;
+				 ORDER BY js.no,jddt.date asc;
 				 ;
 		"; 
         $Q=$this->db->query($sql);

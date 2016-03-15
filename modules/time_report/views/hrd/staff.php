@@ -182,7 +182,6 @@ img{border:none;}
                <td><?php echo $rec['sex'];?></td>
                <td><?php echo $rec['pos_code'];?></td>
                <td>
-                    <a href="<?php echo base_url();?>time_report/hrd/view/<?php echo $rec['tr_code'];?>"><img src="<?php echo base_url();?>assets/images/view.gif" /></a>
                     
 					<a href="<?php echo base_url();?>time_report/hrd/timeuser/<?php echo $rec['tr_code'];?>"><img src="<?php echo base_url();?>assets/images/view.gif" /></a>
 					<a href="<?php echo base_url();?>time_report/hrd/print_out/<?php echo $rec['tr_code'];?>/" target="_blank"><img src="<?php echo base_url();?>assets/images/b_print.png" /></a>

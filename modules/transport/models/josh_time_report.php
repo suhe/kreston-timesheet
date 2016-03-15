@@ -716,7 +716,7 @@ class Josh_time_report extends Model
 				 INNER JOIN josh_staff js ON js.no = SUBSTR(jddt.tr_code,4,5)
 				 WHERE jddt.date>='".$date."' AND jddt.date<='".$date2."'
 				 AND transport_chf>0 AND SUBSTR(jddt.code,19,6) = '".$client."'
-				 ORDER BY js.no;
+				 ORDER BY js.no asc,jddt.date asc;
 		  ";
 		//AND jddt.app_manager = 'yes'
         $Q=$this->db->query($sql);

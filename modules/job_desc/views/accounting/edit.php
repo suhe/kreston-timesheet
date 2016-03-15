@@ -149,8 +149,15 @@
 
 <p>
 			<label for="name">Recovery Rate</label>
+			<?php 
+			 if($budget == 0 || $budget == null) {
+			 	$rate = 0; 
+			 } else {
+			 	$rate = ($approval * 100)/$budget;
+			 }
+			?>
 			
-			<input id="recovery" name="recovery" maxlength="255" value="<?php echo  number_format(($approval * 100)/$budget,2);?>" class="double"  /> %
+			<input id="recovery" name="recovery" maxlength="255" value="<?php echo  number_format($rate,2);?>" class="double"  /> %
                        
 		</p>
  

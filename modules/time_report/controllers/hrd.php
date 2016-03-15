@@ -1,6 +1,6 @@
 <?php 
 class Hrd extends Controller{
-    function Hrd(){
+    public function Hrd(){
         error_reporting(E_ALL);
         parent::Controller();
         session_start();
@@ -16,7 +16,7 @@ class Hrd extends Controller{
         $this->load->helper('date');
     }
     
-    function index(){ 
+    public function index(){ 
         $data['title']      =   "Manage Time Report For HRD";
         $data['records']    =   $this->Josh_time_report->selectPeriodeRecord();
         $data['module']     =   'time_report';
@@ -25,7 +25,7 @@ class Hrd extends Controller{
 		$this->load->template('default');
     }
     
-    function listing(){
+    public function listing(){
         $data['title']      =   "Manage Time Report For HRD";
         $data['records']    =   $this->Josh_time_report->selectPeriodeRecord();
         $data['module']     =   'time_report';
@@ -34,18 +34,18 @@ class Hrd extends Controller{
 		$this->load->template('default');
     }
     
-    function periode($id){
+    public function periode($id){
         unset($_SESSION['periode']);
         $_SESSION['periode']	=   $id;
         $data['title']      	=   "Manage Auditor Report For HRD";
-	$data['periode']   	=   $id;
+		$data['periode']   	=   $id;
         $data['recordprocess']= $this->Josh_time_report->selectHrdPerPeriodeRecordPro($id);
-	 $data['recorddraft'] = $this->Josh_time_report->selectHrdPerPeriodeRecordDraft($id);
+		$data['recorddraft'] = $this->Josh_time_report->selectHrdPerPeriodeRecordDraft($id);
         $data['recordapprov'] = $this->Josh_time_report->selectHrdPerPeriodeRecordApprov($id);
         $data['module']       = 'time_report';
         $data['main']         = 'hrd/staff';
         $this->load->vars($data);
-	$this->load->template('default');
+		$this->load->template('default');
     }
     
     function listing_periode($id){
