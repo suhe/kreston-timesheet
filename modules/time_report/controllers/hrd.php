@@ -359,6 +359,7 @@ class Hrd extends Controller{
         $m=substr($id,11,2);
         $mm=substr($id,11,2);
         $mn=$m-1;
+		$y = substr($id,13,4);
 
         if($mm=='01'){
 			$mn=12;
@@ -400,7 +401,11 @@ class Hrd extends Controller{
                 case '10' : $akhir=31;break;
                 case '11' : $akhir=30;break;
                 case '12' : $akhir=31;break;
-           } 
+           }
+
+		   if($m == '2' && $y % 4 == 0) {
+			   $akhir = 29;
+		   }		   
            
            $xawal='01';
            $xakhir='05';
